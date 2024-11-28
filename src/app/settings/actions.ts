@@ -26,5 +26,6 @@ export async function updateProfile(values: UpdateProfileValues) {
     },
   });
 
+  // permet de revalider le cache de la page d'accueil ( recharge la page mais avec les nouvelles données de manière transparente)
   revalidatePath("/");
 }
