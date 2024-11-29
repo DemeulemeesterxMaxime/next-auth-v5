@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import NavBar from "@/components/NavBar";
 import type { Metadata } from "next";
 import { SessionProvider } from "next-auth/react";
+import {NextUIProvider} from "@nextui-org/system";
 import { Inter } from "next/font/google";
 import { headers } from "next/headers"; // Permet d'accéder aux headers dans le serveur
 import "./globals.css";
@@ -30,10 +31,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <SessionProvider>
-          {/* Afficher la NavBar uniquement si ce n'est pas la page de connexion */}
-          {!isSignInRoute && <NavBar />}
-          {children}
-          <Toaster />
+          <NextUIProvider>
+            {/* Afficher la NavBar uniquement si ce n'est pas la page de connexion */}
+            {!isSignInRoute && <NavBar />}
+            {children}
+            <Toaster />
+          </NextUIProvider>
         </SessionProvider>
       </body>
     </html>

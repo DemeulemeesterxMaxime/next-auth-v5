@@ -14,3 +14,7 @@ Topics I cover:
 - And more
 
 ![thumbnail](https://github.com/codinginflow/next-auth-v5/assets/52977034/99f6ae1c-b58e-46f2-adc6-fcc5ceeadaf2)
+
+
+pour utiliser le projet : npm run dev
+pour regarder la base de donnée : npx prisma studio
